@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    background-color: #0d2d4d;
 }
 
 /* Contenedor Principal de la Tarjeta */
@@ -183,7 +183,7 @@ body {
     gap: 20px;
     padding: 0 40px;
     color: white;
-    background-color: rgb(19, 19, 189);
+    background-color: #364C68;
     text-align: center;
     transition: transform 0.6s ease-in-out;
 }
