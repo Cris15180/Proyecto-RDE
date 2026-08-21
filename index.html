@@ -5,23 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RDE | Inicio</title>
     <link rel="stylesheet" href="css/dashboard.css">
+    <style>
+        :root {
+            --navy-900: #071a2f;
+            --navy-800: #0d2d4d;
+            --navy-700: #123d63;
+            --navy-600: #1d4f7a;
+            --navy-500: #2b5f8f;
+            --navy-100: #eaf2ff;
+            --white: #ffffff;
+            --text: #1a2433;
+            --muted: #4e5d73;
+            --line: rgba(17, 53, 86, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #edf5ff 0%, #dfeeff 100%);
+            color: var(--text);
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 48px;
+            background: rgba(7, 26, 47, 0.96);
+            box-shadow: 0 8px 25px rgba(7, 26, 47, 0.18);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            font-size: 1.2rem;
+        }
+
+        .brand-mark {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #dfeeff, #8bb8ff);
+            color: var(--navy-900);
+            border-radius: 10px;
+            font-weight: 800;
+        }
+
+        .nav {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-radius: 10px;
+            transition: 0.2s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+        }
+
+        .profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 10px 16px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+
+        .profile-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #dfeeff;
+            color: var(--navy-800);
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: 60px auto 0;
+            padding: 0 24px 48px;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--navy-700);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0 0 18px;
+            font-size: clamp(2.2rem, 4vw, 4rem);
+            line-height: 1.1;
+            color: var(--navy-900);
+            max-width: 760px;
+        }
+
+        .lead {
+            margin: 0 0 36px;
+            max-width: 760px;
+            font-size: 1.08rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .feature {
+            text-decoration: none;
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 28px 22px;
+            box-shadow: 0 16px 32px rgba(17, 53, 86, 0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 30px rgba(17, 53, 86, 0.12);
+            border-color: rgba(29, 79, 122, 0.25);
+        }
+
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--navy-700), var(--navy-500));
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            margin: 0 0 10px;
+            color: var(--navy-900);
+            font-size: 1.5rem;
+        }
+
+        .feature p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .topbar {
+                flex-wrap: wrap;
+                gap: 16px;
+                padding: 18px 20px;
+            }
+
+            .nav {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .section-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main {
+                padding: 0 18px 40px;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <header class="topbar">
         <a class="brand" href="index.html"><span class="brand-mark">R</span><span>RDE</span></a>
+
         <nav class="nav" aria-label="Navegación principal">
             <a class="nav-link" href="src/asistencia.html">Asistencia</a>
             <a class="nav-link" href="src/comunicacion.html">Comunicación</a>
             <a class="nav-link" href="src/calendario.html">Calendario</a>
         </nav>
+
         <a class="profile-link" href="src/perfil.html" aria-label="Ir al perfil">
             <span class="profile-icon" aria-hidden="true">♙</span><span class="profile-label">Mi perfil</span>
         </a>
     </header>
+
     <main class="main">
         <p class="eyebrow">Panel escolar RDE</p>
         <h1>Todo lo importante, en un solo lugar.</h1>
         <p class="lead">Consulta tu actividad, mantente al día con tu comunidad y organiza tus próximas fechas desde el panel principal.</p>
+
         <section class="section-grid" aria-label="Apartados principales">
             <a class="feature" href="src/asistencia.html"><span class="feature-icon" aria-hidden="true">✓</span><h2>Asistencia</h2><p>Revisa tu registro de asistencia y tu avance del periodo.</p></a>
             <a class="feature" href="src/comunicacion.html"><span class="feature-icon" aria-hidden="true">✉</span><h2>Comunicación</h2><p>Encuentra avisos y mensajes importantes de tu comunidad.</p></a>
