@@ -76,12 +76,30 @@
             font-weight: 600;
             padding: 10px 14px;
             border-radius: 10px;
-            transition: 0.2s ease;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .nav-link::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--white);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform 0.25s ease;
+            z-index: -1;
+            border-radius: 10px;
         }
 
         .nav-link:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--white);
+            color: #000000;
+        }
+
+        .nav-link:hover::before {
+            transform: scaleY(1);
         }
 
         .profile-link {
@@ -227,13 +245,14 @@
     </header>
 
     <main class="main">
-        <p class="eyebrow">Panel escolar RDE</p>
-        <h1>Todo lo importante, en un solo lugar.</h1>
-        <p class="lead">Consulta tu actividad, mantente al día con tu comunidad y organiza tus próximas fechas desde el panel principal.</p>
+    
+        <h1>Selecciona alguna de las opciones
+        </h1>
+        
 
         <section class="section-grid" aria-label="Apartados principales">
-            <a class="feature" href="src/asistencia.html"><span class="feature-icon" aria-hidden="true">✓</span><h2>Asistencia</h2><p>Revisa tu registro de asistencia y tu avance del periodo.</p></a>
-            <a class="feature" href="src/comunicacion.html"><span class="feature-icon" aria-hidden="true">✉</span><h2>Comunicación</h2><p>Encuentra avisos y mensajes importantes de tu comunidad.</p></a>
+            <a class="feature" href="src/asistencia.html"><span class="feature-icon" aria-hidden="true">✓</span><h2>Asistencia</h2><p>Revisa el registro de la asistencia de los estudiantes.</p></a>
+            <a class="feature" href="src/comunicacion.html"><span class="feature-icon" aria-hidden="true">✉</span><h2>Comunicación</h2><p>Manten informado a los padres por medio de un comunicado.</p></a>
             <a class="feature" href="src/calendario.html"><span class="feature-icon" aria-hidden="true">□</span><h2>Calendario</h2><p>Organiza clases, eventos y fechas de entrega próximas.</p></a>
         </section>
     </main>
