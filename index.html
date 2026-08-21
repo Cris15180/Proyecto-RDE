@@ -119,6 +119,16 @@
             font-weight: 600;
         }
 
+        .logo img {
+            display: block;
+            width: clamp(120px, 15vw, 180px);
+            height: auto;
+            max-height: 48px;
+            object-fit: contain;
+            padding: 0;
+            margin: 0;
+        }
+
         .profile-icon {
             display: inline-flex;
             align-items: center;
@@ -235,7 +245,7 @@
 
 <body>
     <header class="topbar">
-        <a class="brand" href="index.html"><span class="brand-mark">R</span><span>RDE</span></a>
+        <a class="logo" href="index.html"> <img src="./img/Documento.svg" alt=""> </a>
 
         <nav class="nav" aria-label="Navegación principal">
             <a class="nav-link" href="src/asistencia.html">Asistencia</a>
