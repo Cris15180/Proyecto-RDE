@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (usuarioObjeto.password === passwordLogin) {
                     alert(`¡Bienvenido/a, ${usuarioObjeto.nombre}!`);
-                     window.location.href = "/HTML/Inicio.html";
+                     window.location.href = "../index.html";
                 } else {
                     alert("La contraseña no coincide.");
                 }
