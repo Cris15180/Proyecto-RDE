@@ -1,125 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asistencia</title>
-        <style>
-        :root {
-            --navy-900: #071a2f;
-            --navy-800: #0d2d4d;
-            --navy-700: #123d63;
-            --navy-600: #1d4f7a;
-            --navy-500: #2b5f8f;
-            --navy-100: #eaf2ff;
-            --white: #ffffff;
-            --text: #1a2433;
-            --muted: #4e5d73;
-            --line: rgba(17, 53, 86, 0.12);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #edf5ff 0%, #dfeeff 100%);
-            background-size: 100% 100vh;
-            color: var(--text);
-            background-repeat: no-repeat;
-            background-color: #ffffff;
-            min-height: 100vh;
-        }
-
-        .topbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 18px 48px;
-            background: rgba(7, 26, 47, 0.96);
-            box-shadow: 0 8px 25px rgba(7, 26, 47, 0.18);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            font-size: 1.2rem;
-        }
-
-        .brand-mark {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            background: linear-gradient(135deg, #dfeeff, #8bb8ff);
-            color: var(--navy-900);
-            border-radius: 10px;
-            font-weight: 800;
-        }
-
-        .nav {
-            display: flex;
-            gap: 18px;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: rgba(255, 255, 255, 0.85);
-            text-decoration: none;
-            font-weight: 600;
-            padding: 10px 14px;
-            border-radius: 10px;
-            transition: 0.2s ease;
-        }
-
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--white);
-        }
-
-        .profile-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--white);
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            padding: 10px 16px;
-            border-radius: 999px;
-            font-weight: 600;
-        }
-
-        .profile-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: #dfeeff;
-            color: var(--navy-800);
-        }
-
-        .main {
-            max-width: 1200px;
-            margin: 60px auto 0;
-            padding: 0 24px 48px;
-        }
-        </style>
+    <title>Chart.js</title>
+    <link rel="stylesheet" href="../css/asistencia.css">
 </head>
-<body>
+
     <header class="topbar">
         <a class="brand" href="index.html"><span class="brand-mark">R</span><span>RDE</span></a>
         <nav class="nav" aria-label="Navegación principal">
@@ -131,5 +18,51 @@
             <span class="profile-icon" aria-hidden="true">♙</span><span class="profile-label">Mi perfil</span>
         </a>
     </header>
+        
+<body>
+
+    <main class="container">
+
+
+
+        <section class="controls">
+
+            <label for="sectionSelect">
+                Seleccionar sección:
+            </label>
+
+            <select id="sectionSelect">
+                <option value="seccion1">Sección 1</option>
+                <option value="seccion2">Sección 2</option>
+                <option value="seccion3">Sección 3</option>
+                <option value="seccion4">Sección 4</option>
+            </select>
+
+        </section>
+
+        <section class="attendance-section">
+
+            <h2 id="sectionTitle">Sección 1</h2>
+
+            <div id="studentsList" class="students-list">
+                <!-- Los estudiantes aparecerán aquí -->
+            </div>
+
+        </section>
+
+        <section class="chart-section">
+
+            <h2>Asistencia por sección</h2>
+
+            <div class="chart-container">
+                <canvas id="attendanceChart"></canvas>
+            </div>
+
+        </section>
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/asistencia.js"></script>
+
 </body>
 </html>
